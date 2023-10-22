@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const isClose = (text) => {
+            let count = 0
+            for(let i = 0 ; i < text.length ; i++ ){
+                if(text[i] === '('){
+                    count++
+                }else{
+                    count--
+                }
+
+                if(count < 0){
+                    return false
+                }
+                // 用來判斷迴圈提前結束，當第一個已經是 ")" ，屬於非閉合即可 false 出去。
+                // 用來解決 ")(" 卻是 true 的情形
+            }
+            return count === 0
+            // 簡化 if(count === 0){} 判斷式
+            // console.logo(count) 放在這裡沒有用，因為return已經把值先送出去了。
+            // return 後面如果接上判斷式，判斷的結果就是布林值(true or false)
+            // return 後面如果變數，判斷的結果就是變數本身的值
+        }
+        const result = isClose(prompt('輸入文字'))
+        console.log(result)
+            </script>
+</body>
+</html>
