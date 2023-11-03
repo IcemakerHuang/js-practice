@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //回傳第一個Boolean()判斷是true的值
+        // false有哪些? 0、""、null、undefined、NaN(文字轉數字會發生的情境)
+        const x =null || 0 || undefined || 123 || 'abc'
+        console.log(x)
+        // 這裡回傳 123
+
+        //舉例 :
+        // const player = prompt('請輸入玩家名稱')|| '路人'
+        // console.log(player)
+
+        // 短路求值就是為了省略更多寫法，如下
+        // let player = prompt('請輸入玩家名稱')
+        // if (player === '' || player === null){
+        //     player = '路人'
+        // }
+        // console.log(player)
+
+
+        // && 回傳第一個 Boolean() 判斷是 false 的值
+        const y = 123 &&'abc'&& 0 && null && undefined
+        console.log(y)
+        // 這裡回傳 0
+
+        // ?? 回傳第一個 不是null 也不是 undefined 的值
+        const z = undefined ?? null ?? 0 ?? '' ?? 'abc' ?? false
+        console.log(z)
+        // 這裡回傳 0
+
+
+    </script>
+</body>
+</html>
