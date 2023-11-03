@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 黑色 1 3 5 7 9
+        // input*2-1 =黑色星
+        // 總數是9
+        // 5-input=白星
+        
+        // let input = prompt('請輸入星星塔層數')
+        // for(let i = 1 ; i <= input ;  i++){
+        //     for(let j=1 ; j<=i ; j=j*2-1){
+        //         document.write(`★`)
+        //         console.log(j)
+        //     }
+        //     document.write('<br>')
+        // }
+
+            //第一層控制y軸
+            let input = prompt('請輸入數字塔層數')
+        for(let i = 1 ;i <= input ; i++ ){
+            for(let j =1 ; j<= 5-i ;j++){
+                document.write(`☆`)
+            }
+            for(let j = 1 ; j <= 2*i-1 ; j++){
+                document.write(`★`)
+            }
+            for(let j =1 ; j<= 5-i ;j++){
+                document.write(`☆`)
+            }
+            document.write('<br>')
+        }
+
+
+    </script>
+</body>
+</html>
