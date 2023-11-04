@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [1,2,3,4,5]
+
+        // function each (){}
+        // numbers.forEach(each)  
+        // each() 是指fn 回傳值 ，並非fn，所以不太推薦這樣寫
+
+
+        // 陣列 .forEach(function)
+        // 陣列迴圈
+        // function 有三個參數，名字自訂，都是選填
+        // 第一個代表現在迴圈跑到的值
+        // 第二個代表現在迴圈跑到的索引
+        // 第三個代表現在迴圈跑到的陣列本身
+        numbers.forEach((value,index,array) => {     //array參數和numbers都是指同一個東西 ->numbers = [1,2,3,4,5]
+            console.log(value,index,array)           //foreach迴圈運作前，先console.log一次
+
+            // value *= 2  
+            //沒有辦法直接用 value 改值
+
+            // 要改值範例
+            // 只能使用引索修改值
+            array[index] *= 2   // array[index] = array[index]* 2
+            numbers[index] *= 2
+        })
+        console.log(numbers)   // foreach迴圈運作後，才用console.log再顯示運作結果。
+
+        // 用途：可以直接在後面接一個 .foreach 使用，而不需重寫個 for of  個別列出來
+        // 補充: function(){} 若不命名，又稱匿名函式
+
+
+
+
+        // 陣列 .join(分隔文字)
+        // 用分隔文字將陣列串成文字
+        // 分隔文字預設是 ,
+        console.log(numbers.join('/'))  // 顯示: 4/8/12/16/20
+
+
+        const texts = ['a','b','c']
+        //陣列.push()
+        //新增內容到陣列後面
+        texts.push('d')
+        texts.push('e','f','g')
+        console.log(texts)    // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+        // push比較常用，例如:頁面往下滑顯示更多 
+
+        //陣列.unshift()
+        //新增內容到陣列前面
+        texts.unshift('ㄅ')            //先放ㄅ，再放ㄆ,ㄇ,ㄈ。順序問題
+        texts.unshift('ㄆ','ㄇ','ㄈ')
+        console.log(texts)
+
+
+        const text2 = ['ㄅ','ㄆ','ㄇ','ㄈ']
+        //陣列.pop()
+        //移除並回傳最後一個
+        const lastText2 = text2.pop()
+        console.log(lastText2)   //顯示砍掉ㄈ
+        console.log(text2)       //剩下'ㄅ','ㄆ','ㄇ'
+        //陣列.shift()
+        //移除並回傳第一個
+        const firstText2 = text2.shift()
+        console.log(firstText2)  //顯示砍掉ㄅ
+        console.log(text2)       //剩下'ㄆ','ㄇ'
+
+
+        const companies = ['apple','HTC','Samsung','Sony']
+        // 陣列.splice(開始位置 , 刪除數量 , 插入項目1 , 插入項目2 ...)  
+        // 常用語法，例如:購物車裡刪減東西
+        companies.splice(1,2,'nothing','Google')  //刪除 'HTC','Samsung' 添加 'nothing','Google'
+        console.log(companies)                    // ['Sony', 'Google', 'nothing', 'apple']
+        //陣列.reverse()
+        //反轉陣列
+        companies.reverse()
+        console.log(companies)
+
+    </script>
+</body>
+</html>
